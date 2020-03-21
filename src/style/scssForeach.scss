@@ -1,0 +1,9 @@
+
+@each $theme in $themes-color {
+  $name: map-get($theme, 'name');
+  $color: map-get($theme, 'value');
+
+  .theme-#{$name} {
+    background-color: $color;
+  }
+}
