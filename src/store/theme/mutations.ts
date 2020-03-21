@@ -1,7 +1,9 @@
 import { RootStateTypes } from "./type";
 
-export const mutations = {
+const mutations = {
   changeTheme(state: RootStateTypes, val: string) {
     state.theme = val;
   }
 };
+
+export default mutations;

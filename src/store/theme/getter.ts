@@ -1,5 +1,7 @@
 import { RootStateTypes } from "./type";
 
-export const getters = {
+const getters = {
   theme: (state: RootStateTypes) => state.theme
 };
+
+export default getters;

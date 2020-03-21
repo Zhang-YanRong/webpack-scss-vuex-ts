@@ -5,9 +5,7 @@ import theme from "./theme/index";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    theme: ""
-  },
+  state: {},
   mutations: {},
   actions: {},
   modules: {

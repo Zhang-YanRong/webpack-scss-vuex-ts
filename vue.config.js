@@ -1,6 +1,6 @@
-const path = require("path");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+// const path = require("path");
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+//   .BundleAnalyzerPlugin;
 
 module.exports = {
   publicPath: "./",
@@ -34,7 +34,7 @@ module.exports = {
     sourceMap: false,
     loaderOptions: {
       sass: {
-        prependData: `@import '@/style';
+        prependData: `@import '@/style';`
       }
     }
   }

@@ -1,5 +1,7 @@
 import { RootStateTypes } from "./type";
 
-export const state: RootStateTypes = {
+const state: RootStateTypes = {
   theme: ""
 };
+
+export default state;

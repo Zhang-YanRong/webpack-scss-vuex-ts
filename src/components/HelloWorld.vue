@@ -36,7 +36,7 @@ export default class HelloWorld extends Vue {
   }
 
   mounted() {
-    console.log(this.$store.getters.theme);
+    console.log(this.$store.getters["theme/theme"]);
   }
 }
 </script>

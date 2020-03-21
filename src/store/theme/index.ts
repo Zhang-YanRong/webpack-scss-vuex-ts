@@ -1,7 +1,8 @@
-import { mutations } from "./mutations";
-import { getters } from "./getter";
-import { state } from "./state";
+import mutations from "./mutations";
+import getters from "./getter";
+import state from "./state";
 
+console.log(state, 111);
 const theme = {
   namespaced: true,
   mutations,
