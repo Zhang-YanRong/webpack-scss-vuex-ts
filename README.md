@@ -1,6 +1,7 @@
 # scss-webpack-element
 
-### 换肤demo
+## 换肤demo
+---
 * vuex管理总class
 * scss生成主题色
 * ts书写方式
@@ -9,8 +10,9 @@
 * 按需引入element
 
 
-### scss 用法
 
+## scss 用法
+---
 * ### 组合选择器
     在设置嵌套样式时，默认使用后代选择器，当也支持使用组合选择器匹配其他层级的对象：
 
