@@ -1,0 +1,14 @@
+@mixin corner-icon($name) {
+  .icon-#{$name} {
+      background-image: url("/icons/#{$name}.svg")
+  }
+}
+
+@include corner-icon("mail")
+
+/*
+* 结果
+* .icon-mail {
+*  background-image: url("/icons/mail.svg");
+* }
+*/

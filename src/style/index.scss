@@ -1,2 +1,7 @@
+@import "./mixins";
 @import "theme";
 @import "scssForeach";
+
+.position {
+  @include position(0,0,0,0)
+}

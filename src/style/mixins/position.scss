@@ -1,0 +1,12 @@
+/*
+* 混合传值
+*/
+
+@mixin position($left, $top, $right, $bottom) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  margin: auto;
+}

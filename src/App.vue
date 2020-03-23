@@ -1,18 +1,13 @@
 <template>
   <div id="app" :class="theme">
-    <HelloWorld />
+    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
 
-@Component({
-  components: {
-    HelloWorld
-  }
-})
+@Component
 export default class App extends Vue {
   mounted() {
     process.env.VUE_APP_ENV === "dev"
