@@ -6,3 +6,4 @@
 * ts书写方式
 * vue.config.js 中css配置默认引入scss文件
 * vuex使用namespace方式
+* 按需引入element
