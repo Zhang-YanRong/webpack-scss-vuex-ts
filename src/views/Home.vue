@@ -2,6 +2,7 @@
   <div class="home">
     <Theme />
     <div class="scss-mixins position"></div>
+    <Echarts class="echart-pie position" />
   </div>
 </template>
 
@@ -9,10 +10,12 @@
 // @ is an alias to /src
 import { Component, Vue } from "vue-property-decorator";
 import Theme from "@/components/Theme.vue";
+import Echarts from "@/components/Echarts.vue";
 
 @Component({
   components: {
-    Theme
+    Theme,
+    Echarts
   }
 })
 export default class Home extends Vue {}
@@ -23,5 +26,9 @@ export default class Home extends Vue {}
   width: 100px;
   height: 100px;
   background: #efefef;
+}
+.echart-pie {
+  width: 400px;
+  height: 400px;
 }
 </style>

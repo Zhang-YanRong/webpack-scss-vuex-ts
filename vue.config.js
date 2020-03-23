@@ -31,5 +31,8 @@ module.exports = {
         prependData: `@import '@/style/index.scss';`
       }
     }
-  }
+  },
+
+  // 配置vue-echarts
+  transpileDependencies: ["vue-echarts", "resize-detector"]
 };

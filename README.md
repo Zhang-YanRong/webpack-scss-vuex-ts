@@ -91,3 +91,114 @@ a:visited { color: green; }
 ```
 
 * ### 内置模块
+
+## vue-echarts
+---
+### 安装
+``` javascript
+  yarn echarts vue-echarts
+```
+
+### 整体引入
+``` javascript 
+  import Vue from 'vue'
+  import ECharts from 'vue-echarts' // 在 webpack 环境下指向 components/ECharts.vue
+
+  // 手动引入 ECharts 各模块来减小打包体积
+  import 'echarts/lib/chart/bar'
+  import 'echarts/lib/component/tooltip'
+
+  // 如果需要配合 ECharts 扩展使用，只需要直接引入扩展包即可
+  // 以 ECharts-GL 为例：
+  // 需要安装依赖：npm install --save echarts-gl，并添加如下引用
+  import 'echarts-gl'
+
+  // 注册组件后即可使用
+  Vue.component('v-chart', ECharts)
+```
+
+### vue.config.js
+``` javascript 
+  module.exports = {
+    transpileDependencies: [
+      'vue-echarts',
+      'resize-detector'
+    ]
+  }
+```
+
+### 调用组件
+``` javascript
+  <template>
+    <v-chart :options="polar"/>
+  </template>
+
+  <script lang="ts">
+    import { Component, Vue } from "vue-property-decorator";
+    // 引入组件
+    import "@/utils/vue-echarts";
+    // 饼图按需引入
+    import "echarts/lib/chart/pie";
+
+    @Component
+    export default class HelloWorld extends Vue {
+      private orgOptions: object = {};
+
+      mounted() {
+        // orgOptions 就是echarts的options
+        this.orgOptions = {
+          tooltip: {
+            trigger: "item",
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+          },
+          legend: {
+            orient: "vertical",
+            left: 10,
+            data: ["直接访问", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
+          },
+          series: [
+            {
+              name: "访问来源",
+              type: "pie",
+              radius: ["50%", "70%"],
+              avoidLabelOverlap: false,
+              label: {
+                show: false,
+                position: "center"
+              },
+              emphasis: {
+                label: {
+                  show: true,
+                  fontSize: "30",
+                  fontWeight: "bold"
+                }
+              },
+              labelLine: {
+                show: false
+              },
+              data: [
+                { value: 335, name: "直接访问" },
+                { value: 310, name: "邮件营销" },
+                { value: 234, name: "联盟广告" },
+                { value: 135, name: "视频广告" },
+                { value: 1548, name: "搜索引擎" }
+              ]
+            }
+          ]
+        };
+      }
+    }
+  </script>
+  <style scoped lang="scss">
+    /**
+     * 默认尺寸为 600px×400px，如果想让图表响应尺寸变化，可以像下面这样
+     * 把尺寸设为百分比值（同时请记得为容器设置尺寸）。
+     */
+    .echarts {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+
+```

@@ -32,12 +32,7 @@ export default class HelloWorld extends Vue {
   ];
 
   public changeTheme() {
-    console.log(this.$store);
     this.$store.commit("theme/changeTheme", this.theme);
-  }
-
-  mounted() {
-    console.log(this.$store.getters["theme/theme"]);
   }
 }
 </script>
