@@ -6,14 +6,9 @@
 
 <script lang="ts">
 // @ is an alias to /src
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue";
-// export default {
-//   name: "Home",
-//   components: {
-//     HelloWorld
-//   }
-// };
+
 @Component({
   components: {
     HelloWorld

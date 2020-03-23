@@ -26,15 +26,9 @@ module.exports = {
   },
 
   css: {
-    // 启用 CSS modules
-    modules: false,
-    // 是否使用css分离插件
-    extract: true,
-    // 开启 CSS source maps，一般不建议开启
-    sourceMap: false,
     loaderOptions: {
       sass: {
-        prependData: `@import '@/style';`
+        prependData: `@import '@/style/index.scss';`
       }
     }
   }

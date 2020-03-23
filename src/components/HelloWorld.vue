@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <el-select v-model="theme" @change="getTheme" placeholder="请选择">
+    <el-select v-model="theme" @change="changeTheme" placeholder="请选择">
       <el-option
         v-for="item in options"
         :key="item.value"
@@ -27,12 +27,13 @@ export default class HelloWorld extends Vue {
     },
     {
       label: "橘色",
-      value: "origin"
+      value: "orange"
     }
   ];
 
-  public getTheme() {
-    this.$emit("theme", this.theme);
+  public changeTheme() {
+    console.log(this.$store);
+    this.$store.commit("theme/changeTheme", this.theme);
   }
 
   mounted() {

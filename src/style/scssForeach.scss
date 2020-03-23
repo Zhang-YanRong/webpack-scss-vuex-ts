@@ -4,6 +4,6 @@
   $color: map-get($theme, 'value');
 
   .theme-#{$name} {
-    background-color: $color;
+    background: $color;
   }
 }

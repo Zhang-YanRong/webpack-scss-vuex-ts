@@ -1,7 +1,6 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div id="app" :class="theme">
+    <HelloWorld />
   </div>
 </template>
 
@@ -20,6 +19,10 @@ export default class App extends Vue {
       ? console.log("dev1")
       : console.log("test");
   }
+
+  get theme(): string {
+    return this.$store.getters["theme/theme"];
+  }
 }
 </script>
 
@@ -28,8 +31,6 @@ export default class App extends Vue {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  min-height: 100vh;
 }
 </style>
