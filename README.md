@@ -1,4 +1,4 @@
-# scss~webpack~element~vue-Echarts~换肤~ts~vuex
+# [scss] [webpack] [element] [vue-Echarts] [换肤] [ts] [vuex]
 
 ## 换肤demo
 ---
